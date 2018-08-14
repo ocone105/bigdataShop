@@ -42,13 +42,13 @@ footer {
 <body>
 	<div id="outer" >
 		<div id="header" >
-	
+			<!-- 여기에 top메뉴가 연결되도록 하세요 -->
 		</div>
 		<div id="left" class="col-sm-2 sidenav">
-	
+			<!-- 여기에 adminleft메뉴가 연결되도록 하세요 -->
 		</div>
 		<div id="content" class="col-sm-10">
-	
+			<!-- 여기에 admincontent가 연결되도록 하세요 -->
 		</div>
 	</div>
 </body>
