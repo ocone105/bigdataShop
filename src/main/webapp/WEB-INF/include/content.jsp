@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,11 +30,14 @@
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 				<li data-target="#myCarousel" data-slide-to="3"></li>
 			</ol>
-	
+			${hitproduct}
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
+			
+				
+			
 				<div class="item active" style="height: 250px">
-					<img src="/bigdataShop/resources/images/product/dress_images1.jpg" alt="Chania" >
+					<img src="/bigdataShop/resources/images/product/${hitproduct.img_org_file_nm }" alt="Chania" >
 				</div>
 	
 				<div class="item" style="height: 250px">
@@ -60,8 +64,8 @@
 			</a>
 		</div>
 	</div>
-	<br />
-	<br />
+	<br/>
+	<br/>
 	<div class="row">
 		<div class="col-sm-4">
 				<div class="panel panel-primary">
