@@ -25,7 +25,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public List<ProductDTO> newproduct() {
-		return null;
+		return sqlSession.selectList("kr.kitri.bigdataShop.product.newproduct");
 	}
 
 	@Override

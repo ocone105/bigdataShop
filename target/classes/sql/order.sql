@@ -101,4 +101,3 @@ values (to_char(sysdate,'yyyymmdd') ||100||ord_seq.nextval,
 insert into TB_ORDER_PRODUCT 
 values(to_char(sysdate,'yyyymmdd') ||100||ord_seq.currval,
 			'PRD000000011',1);
-			

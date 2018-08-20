@@ -20,7 +20,9 @@ public class IndexController{
 		ModelAndView mav = new ModelAndView();
 		// 히트상품과 뉴상품을 조회하는 서비스의 메소드를 호출하고 ModelAndView에 히트상품과 뉴상품을 attribute로 저장
 		List<ProductDTO> hitproduct = service.hitproduct();
+		List<ProductDTO> newproduct = service.newproduct();
 		mav.addObject("hitproduct", hitproduct);
+		mav.addObject("newproduct", newproduct);
 		mav.setViewName("index");
 		return mav;
 	}
