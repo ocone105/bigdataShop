@@ -94,7 +94,7 @@ footer {
 				<li><a href="#" class="goodsLink"
 					onclick="formGetSubmit( '/commerce/foffice/product/product.lime', 'r_prcode=G4135_F0002_X0004_K0040' )">
 						<img src="/bigdataShop/resources/images/product/${item.img_gen_file_nm}" alt="상품"
-						class="photo" /><br /> <span class="proPrice1"></span>
+						class="photo" /><br /> <span class="proPrice1">${item.prd_nm }</span>
 				</a><br /> <span class="proPrice2">${item.sell_prc_unit }원</span>
 
 
