@@ -14,8 +14,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public List<ProductDTO> productlist(String category) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.productlist(category);
 	}
 
 	@Override
@@ -30,8 +29,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDTO read(String prd_no) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.read(prd_no);
 	}
 
 }

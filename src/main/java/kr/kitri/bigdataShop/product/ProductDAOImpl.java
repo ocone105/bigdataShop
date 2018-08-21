@@ -14,8 +14,15 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	@Override
 	public List<ProductDTO> productlist(String category) {
-		// TODO Auto-generated method stub
-		return null;
+		String action="";
+		if(category==null) {	// 전체상품리스트 조회
+			action = "kr.kitri.bigdataShop.product.listall";
+		}
+		else {	// 카테고리별 리스트 조회
+			action = "kr.kitri.bigdataShop.product.categorySearch";
+		}
+		List<ProductDTO> list = sqlSession.selectList(action, category);
+		return list;
 	}
 
 	@Override
@@ -30,8 +37,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public ProductDTO read(String prd_no) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("kr.kitri.bigdataShop.product.read", prd_no);
 	}
 
 }
