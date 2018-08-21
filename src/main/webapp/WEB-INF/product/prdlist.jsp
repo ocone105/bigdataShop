@@ -44,9 +44,32 @@ footer {
 	margin-right: auto;
 }
 </style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/bigdataShop/resources/common/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#saveButton").on("click", function(){//저장버튼 클릭
+			$("#saveButton").click(function(){//입력값 var 
+				cookie_value = $("#save").val();
+				$.cookie('cookie1', cookie_value);
+			});//불러오기버튼 클릭
+			$("#loadButton").click(function(){//저장버튼클릭시 'cookie' key값을 불러온다. 
+				var cookie_value = $.cookie('cookie1');// load라는 id text태그에 cookie_value변수에 들어있는 값을 담는다.
+				$("#load").val(cookie_value);
+				alert(cookie_value)
+			})//삭제버튼 클릭
+			$("#deleteButton").click(function(){//'cookie' 라는 key값의 쿠키를 삭제한다
+				$.removeCookie("cookie");
+			}) 
+		})
+	})
+</script>
 </head>
 <body>
-	
+	저장값 : <input type="text" id="save" /> <input type="button" value="쿠키저장" id="saveButton" /><br/> 
+	쿠키값호출 : <input type="text" id="load" /> <input type="button" value="쿠키불러오기" id="loadButton" /> 
+	<input type="button" value="쿠키삭제" id="deleteButton" />
+
 	<div class="goodsListArea">
 		<!-- 조회 결과 메세지 및 순서 -->
 		<div class="goodsListHead">
@@ -88,19 +111,16 @@ footer {
 			<!-- 상품리스트 [리스트 형] 끝 -->
 
 			<!-- 상품리스트 [갤러리 형] 시작 -->
-
 			<ul class="goodsAreaG">
 				<!-- *상품 있을경우 -->
 				<c:forEach var="product" items="${prdlist}">
-				<li><a href="/bigdataShop/product/${product.category_no}/${product.prd_no}" class="goodsLink"
-					onclick="formGetSubmit( '/commerce/foffice/product/product.lime', 'r_prcode=G4135_F0002_X0004_K0040' )">
+				<li><a href="/bigdataShop/product/${product.category_no}/${product.prd_no}" class="goodsLink" 
+					onclick="setCookie()">
 						<img src="/bigdataShop/resources/images/product/${product.img_gen_file_nm}" alt="상품"
 						class="photo" /><br /> <span class="proPrice1">${product.prd_nm }</span>
 				</a><br /> <span class="proPrice2">${product.sell_prc_unit }원</span>
-
-
 					<ul class="bIcon">
-
+				
 
 						<li><a href="#"
 							onclick="basketIn( 'G4135_F0002_X0004_K0040' );return false;"><img
@@ -111,8 +131,9 @@ footer {
 					</ul>
 				</li>
 				</c:forEach>
-		
+				
 			</ul>
+			
 		</div>
 	</div>
 		
